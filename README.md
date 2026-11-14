@@ -1,2 +1,1 @@
-README.md
-https://github.com/mahdiabolfathi547-beep/CIT384-Project2/
+ https://mahdiabolfathi547-beep.github.io/CIT384-Project2/
