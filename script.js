@@ -8,9 +8,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
   
-
-  
-    
   })
   
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
@@ -23,16 +20,16 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedTreatButton() {
       // Increase pet happiness
       // Increase pet weight
-      happiness += 1;
-      weight += 1;
+      pet_info.happiness += 1;
+      pet_info.weight+= 1;
       checkAndUpdatePetInfoInHtml();
     }
     
     function clickedPlayButton() {
       // Increase pet happiness
       // Decrease pet weight
-      happiness += 1;
-      weight -= 1;
+      pet_info.happiness += 1;
+     pet_info.weight -= 1;
       checkAndUpdatePetInfoInHtml();
     }
 
@@ -41,8 +38,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedExerciseButton() {
       // Decrease pet happiness
       // Decrease pet weight
-      happiness -= 1;
-      weight -= 1;
+     pet_info.happiness -= 1;
+      pet_info.weight -= 1;
       checkAndUpdatePetInfoInHtml();
     }
   
@@ -61,15 +58,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
          pet_info.happiness =0;
       }
 
-      if (pet_info. < 0) {
-          pet_info.
-      }
     }
     
     // Updates your HTML with the current values in your pet_info object
     function updatePetInfoInHtml() {
-      $('.name').text(pet_info['name']);
-      $('.weight').text(pet_info['weight']);
-      $('.happiness').text(pet_info['happiness']);
+      $('.name').text(pet_info.name);
+      $('.weight').text(pet_info.weight);
+      $('.happiness').text(pet_info.happiness);
     }
   
