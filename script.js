@@ -1,5 +1,11 @@
 $(function() { // Makes sure that your function is called once all the DOM elements of the page are ready to be used.
-    
+    // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
+    //pet information and starting value
+    var pet_info = {
+      name:"Larry",
+      weight: 35,
+      happiness: 7
+    };
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml();
   
@@ -7,21 +13,22 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
-  
+    $('.rest-button').click(clickedRestButton);
   })
   
+    // .slideToggle () smoothly opens or closes the care tips
+    $(".tips-button").clicks(function () {
+    $(".care-tips").slideToggle();
+    });
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-    var pet_info = {
-      name:"Larry",
-      weight: 35,
-      happiness: 7
-    };
+   
 
     function clickedTreatButton() {
       // Increase pet happiness
       // Increase pet weight
       pet_info.happiness += 1;
       pet_info.weight+= 1;
+      showPetMessage ("That treat was delicious!");
       checkAndUpdatePetInfoInHtml();
     }
     
@@ -30,6 +37,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Decrease pet weight
       pet_info.happiness += 1;
      pet_info.weight -= 1;
+     showPetMessage("I had fun playing with you!");
       checkAndUpdatePetInfoInHtml();
     }
 
