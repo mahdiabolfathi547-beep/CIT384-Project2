@@ -88,6 +88,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       updatePetInfoInHtml();
       //Display a comment after each action button is clicked.
       $(".pet-message").text(message);
+      
 
       //.fadeTo() briefly makes the pet image partly transparent,
       // then fades it back to full opacity as visual response.
