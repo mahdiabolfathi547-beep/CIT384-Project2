@@ -60,8 +60,27 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function checkAndUpdatePetInfoInHtml(message) {
       checkWeightAndHappinessBeforeUpdating();  
+
       updatePetInfoInHtml();
       showPetMessage(message)
+    }
+
+    function checkWeightAndHappinessBeforeUpdating() {
+      /*Add conditional so if weight is lower than zero.*/
+      pet_info.weight = Math.max(0, pet_info.weight);
+      pet_info.happiness= Math.max(0, Math.min(10, pet_info.happiness));
+    }
+    
+    // Updates your HTML with the current values in your pet_info object
+    function updatePetInfoInHtml() {
+      $('.name').text(pet_info.name);
+      $('.weight').text(pet_info.weight);
+      $('.happiness').text(pet_info.happiness);
+
+      var happinessPercent = pet_info.happiness * 10;
+      $(".meter-fill").css("width", happinessPercent + "%");
+
+      $(".pet-image").attr("alt", pet_info.name + " has" + pet_info.happiness + " happiness out of 10");
     }
 
     function showPetMessage(Message) {
@@ -74,25 +93,4 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // then fades it back to full opacity as visual response.
       $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
   }
-    function checkWeightAndHappinessBeforeUpdating() {
-      /*Add conditional so if weight is lower than zero.*/
-      if (pet_info.weight < 0) {
-        pet_info.weight = 0;
-      }
-
-      if (pet_info.happiness < 0 ) {
-         pet_info.happiness = 0;
-      }
-
-      if (pet_info.happiness > 10) {
-        pet_info.happiness = 10;
-      }
-    }
-    
-    // Updates your HTML with the current values in your pet_info object
-    function updatePetInfoInHtml() {
-      $('.name').text(pet_info.name);
-      $('.weight').text(pet_info.weight);
-      $('.happiness').text(pet_info.happiness);
-    }
   
