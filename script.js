@@ -91,6 +91,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
          pet_info.happiness =0;
       }
 
+      if (pet_info.happiness >10) {
+        pet_info.happiness =10;
+      }
     }
     
     // Updates your HTML with the current values in your pet_info object
