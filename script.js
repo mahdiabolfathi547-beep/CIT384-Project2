@@ -18,7 +18,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   
     // .slideToggle () smoothly opens or closes the care tips
     $(".tips-button").clicks(function () {
-    $(".care-tips").slideToggle();
+    $(".care-tips").slideToggle(300);
     });
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
    
@@ -28,8 +28,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Increase pet weight
       pet_info.happiness += 1;
       pet_info.weight+= 1;
-      showPetMessage ("That treat was delicious!");
       checkAndUpdatePetInfoInHtml();
+      showPetMessage ("That treat was delicious!");
     }
     
     function clickedPlayButton() {
@@ -37,8 +37,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Decrease pet weight
       pet_info.happiness += 1;
      pet_info.weight -= 1;
-     showPetMessage("I had fun playing with you!");
       checkAndUpdatePetInfoInHtml();
+      showPetMessage("I had fun playing with you!");
     }
 
    
@@ -49,13 +49,38 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
      pet_info.happiness -= 1;
       pet_info.weight -= 1;
       checkAndUpdatePetInfoInHtml();
+      showPetMessage("I got some good excercise!");
     }
-  
+
+    //Rest is the new action. It increaes happiness without changing weight.
+    function clickRestButton() {
+      pet_info.happiness -=1;
+      pet_info.weight -=1;
+      showPetMessage("I got some good excercise");
+    }
+
+    function clickedButton() {
+      pet_info.happiness +=1;
+      showPetMessage("A little rest makes happy.");
+    }
+
+
     function checkAndUpdatePetInfoInHtml() {
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
     }
+
+    function showPetMessage(Message) {
+      checkPetValues();
+      updatePetInfoInHtml();
     
+    //Display a comment after each action button is clicked.
+    $(".pet-message").text(message);
+
+    //.fadeTo() briefly makes the pet image partly transparent,
+    // then fades it back to full opacity as visual response.
+    $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
+  }
     function checkWeightAndHappinessBeforeUpdating() {
       /*Add conditional so if weight is lower than zero.*/
       if (pet_info.weight < 0) {
