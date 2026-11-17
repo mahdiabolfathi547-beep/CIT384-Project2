@@ -7,7 +7,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       happiness: 7
     };
     // Called function to update the name, happiness, and weight of our pet in our HTML
-    checkAndUpdatePetInfoInHtml();
+    checkAndUpdatePetInfoInHtml("Mochi is ready to start!");
   
     // When each button is clicked, it will "call" function for that button (functions are below)
     $('.treat-button').click(clickedTreatButton);
@@ -16,7 +16,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.rest-button').click(clickedRestButton);
   })
   
-    // .slideToggle () smoothly opens or closes the care tips
+    // .slideToggle() smoothly opens or closes the care tips
     $(".tips-button").clicks(function () {
     $(".care-tips").slideToggle(300);
     });
@@ -26,19 +26,19 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedTreatButton() {
       // Increase pet happiness
       // Increase pet weight
-      pet_info.happiness += 1;
+      pet_info.happiness += 2;
       pet_info.weight+= 1;
-      checkAndUpdatePetInfoInHtml();
-      showPetMessage ("That treat was delicious!");
+      checkAndUpdatePetInfoInHtml("Mochi is happier after the treat!");
+      //showPetMessage("That treat was delicious!");
     }
     
     function clickedPlayButton() {
       // Increase pet happiness
       // Decrease pet weight
-      pet_info.happiness += 1;
-     pet_info.weight -= 1;
-      checkAndUpdatePetInfoInHtml();
-      showPetMessage("I had fun playing with you!");
+      pet_info.happiness += 2;
+      pet_info.weight -= 1;
+      checkAndUpdatePetInfoInHtml("So much fun! Mochi wants to play again");
+      //showPetMessage("I had fun playing with you!");
     }
 
    
@@ -46,40 +46,39 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedExerciseButton() {
       // Decrease pet happiness
       // Decrease pet weight
-     pet_info.happiness -= 1;
+      pet_info.happiness -= 2;
       pet_info.weight -= 1;
-      checkAndUpdatePetInfoInHtml();
-      showPetMessage("I got some good excercise!");
+      checkAndUpdatePetInfoInHtml("Mochi feels stronger after exercise!");
+      //showPetMessage("I got some good excercise!");
     }
 
     //Rest is the new action. It increaes happiness without changing weight.
     function clickRestButton() {
-      pet_info.happiness -=1;
-      pet_info.weight -=1;
-      showPetMessage("I got some good excercise");
+      pet_info.happiness += 1;
+      //showPetMessage("I got some good excercise");
     }
 
-    function clickedButton() {
-      pet_info.happiness +=1;
-      showPetMessage("A little rest makes happy.");
-    }
+    //function clickedButton() {
+    //  pet_info.happiness +=1;
+    //  showPetMessage("A little rest makes happy.");
+    //}
 
 
-    function checkAndUpdatePetInfoInHtml() {
+    function checkAndUpdatePetInfoInHtml(message) {
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
+      showPetMessage(message)
     }
 
     function showPetMessage(Message) {
       checkPetValues();
       updatePetInfoInHtml();
-    
-    //Display a comment after each action button is clicked.
-    $(".pet-message").text(message);
+      //Display a comment after each action button is clicked.
+      $(".pet-message").text(message);
 
-    //.fadeTo() briefly makes the pet image partly transparent,
-    // then fades it back to full opacity as visual response.
-    $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
+      //.fadeTo() briefly makes the pet image partly transparent,
+      // then fades it back to full opacity as visual response.
+      $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
   }
     function checkWeightAndHappinessBeforeUpdating() {
       /*Add conditional so if weight is lower than zero.*/
@@ -88,11 +87,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       }
 
       if (pet_info.happiness < 0 ) {
-         pet_info.happiness =0;
+         pet_info.happiness = 0;
       }
 
-      if (pet_info.happiness >10) {
-        pet_info.happiness =10;
+      if (pet_info.happiness > 10) {
+        pet_info.happiness = 10;
       }
     }
     
