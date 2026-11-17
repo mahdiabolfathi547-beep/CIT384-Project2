@@ -58,12 +58,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       //showPetMessage("I got some good excercise");
     }
 
-    //function clickedButton() {
-    //  pet_info.happiness +=1;
-    //  showPetMessage("A little rest makes happy.");
-    //}
-
-
     function checkAndUpdatePetInfoInHtml(message) {
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
