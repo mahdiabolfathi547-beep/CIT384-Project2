@@ -6,6 +6,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       weight: 35,
       happiness: 7
     };
+
+ 
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml("Mochi is ready to start!");
   
@@ -17,7 +19,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
   })
   
     // .slideToggle() smoothly opens or closes the care tips
-    $(".tips-button").clicks(function () {
+    $(".tips-button").click(function () {
     $(".care-tips").slideToggle(300);
     });
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
@@ -53,7 +55,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
     //Rest is the new action. It increaes happiness without changing weight.
-    function clickRestButton() {
+    function clickedRestButton() {
       pet_info.happiness += 1;
       //showPetMessage("I got some good excercise");
     }
