@@ -6,21 +6,39 @@
   body {
     font-family: helvetica, arial, sans-serif;
     margin: 25px;
+    background-color: #f3f4f6;
+    color: #222;
   }
 
   
-  main {
-    display:block;
-    height:175px;
-  }
+  
   
   header {
     border-bottom: 1px solid black;
   }
   
   h1 {
-    font-weight: bold;
-    color: #000;
+    color: 1e2835;
+  }
+
+  main {
+    display:flex;
+    flex-wrap: wrap;
+    align-item: flex-start;
+    gap: 20px;
+    height:175px;
+  }
+
+  .pet-image-container {
+    padding: 10px;
+  }
+  
+  .pet-image {
+    display: block;
+    width: 280px;
+    height:250px;
+    object-fit: cover;
+    border-radius: 12px;
   }
   
   .bold {
@@ -46,13 +64,6 @@
     margin:5px;
   }
   
-  .pet-image {
-    display: block;
-    width: 280px;
-    height:250px;
-    object-fit: cover;
-    border-radius: 12px;
-  }
   
   .dashboard div {
     display:block;
