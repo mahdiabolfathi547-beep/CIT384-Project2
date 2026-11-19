@@ -9,16 +9,16 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
     //pet information and starting value
 
- 
+
     // Called function to update the name, happiness, and weight of our pet in our HTML
     checkAndUpdatePetInfoInHtml("Mochi is ready to start!");
   
     // When each button is clicked, it will "call" function for that button (functions are below)
-    $('.treat-button').click(clickedTreatButton);
-    $('.play-button').click(clickedPlayButton);
-    $('.exercise-button').click(clickedExerciseButton);
-    $('.rest-button').click(clickedRestButton);
-  })
+    $('.treat-button').click(message);
+    //$('.play-button').click(clickedPlayButton);
+    //$('.exercise-button').click(clickedExerciseButton);
+    //$('.rest-button').click(clickedRestButton);
+})
   
     // .slideToggle() smoothly opens or closes the care tips
     $(".tips-button").click(function () {
@@ -45,7 +45,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       //showPetMessage("I had fun playing with you!");
     }
 
-   
+    function message(){
+      console.log("Given treat");
+    }
     
     function clickedExerciseButton() {
       // Decrease pet happiness
@@ -66,7 +68,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       checkWeightAndHappinessBeforeUpdating();  
 
       updatePetInfoInHtml();
-      showPetMessage(message)
+      //showPetMessage(message)
     }
 
     function checkWeightAndHappinessBeforeUpdating() {
@@ -88,18 +90,18 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
 
-    function showPetMessage(Message) {
-      checkPetValues();
-      updatePetInfoInHtml();
-      //Display a comment after each action button is clicked.
+    // function showPetMessage(Message) {
+    //  //hasnt been defined checkPetValues();
+    //   updatePetInfoInHtml();
+    //   //Display a comment after each action button is clicked.
+    // }
+    //   function showPetMessage(message) {
+    //   $(".pet-message").text(message);
+
+    //   $(".pet-message").attr("alt",showPetMessage,"Mochi is ready to start!");
+
+    //   //.fadeTo() briefly makes the pet image partly transparent,
+    //   // then fades it back to full opacity as visual response.
+    //   $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
       
-      function showPetMessage(message) {
-      $(".pet-message").text(message);
-
-      $(".pet-message").attr("alt",showPetMessage,"Mochi is ready to start!");
-
-      //.fadeTo() briefly makes the pet image partly transparent,
-      // then fades it back to full opacity as visual response.
-      $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
-  }
-};
+    //   }
