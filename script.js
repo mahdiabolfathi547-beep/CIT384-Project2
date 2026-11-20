@@ -14,19 +14,15 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     checkAndUpdatePetInfoInHtml("Mochi is ready to start!");
   
     // When each button is clicked, it will "call" function for that button (functions are below)
-    $('.treat-button').click(message);
-    //$('.play-button').click(clickedPlayButton);
-    //$('.exercise-button').click(clickedExerciseButton);
-    //$('.rest-button').click(clickedRestButton);
-})
-  
-    // .slideToggle() smoothly opens or closes the care tips
-    $(".tips-button").click(function () {
-    $(".care-tips").slideToggle(300);
-    });
-    // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-   
+    $('.treat-button').click(clickedTreatButton);
+    $('.play-button').click(clickedPlayButton);
+    $('.exercise-button').click(clickedExerciseButton);
+    $('.rest-button').click(clickedRestButton);
 
+    $(".tips-button").on("click", function () {
+      $(".care-tips").slideToggle(300);
+    });
+})
     function clickedTreatButton() { console.log ("Hello");
       // Increase pet happiness
       // Increase pet weight
@@ -66,9 +62,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
 
     function checkAndUpdatePetInfoInHtml(message) {
       checkWeightAndHappinessBeforeUpdating();  
-
       updatePetInfoInHtml();
-      //showPetMessage(message)
+      showPetMessage(message)
     }
 
     function checkWeightAndHappinessBeforeUpdating() {
@@ -94,6 +89,5 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       //hasnt been defined checkPetValues();
       updatePetInfoInHtml();
       $(".pet-message").text(message);
-      $(".pet-image").fadeTo(150,0.45).fadeTo(300,1)
-      
+      $(".pet-image").fadeTo(150,0.45).fadeTo(300,1) 
      }

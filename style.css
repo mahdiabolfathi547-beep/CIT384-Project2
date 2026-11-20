@@ -84,10 +84,10 @@
   
   .button-container button {
     width: 100px;
-      margin-right: 10px;
-      text-align: center;
-      display: inline-block;
-      float: left;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    /*float: center;*/
     font-size:15px;
     background-color: #1e2835;
     border-color: #404853;
