@@ -90,18 +90,10 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
 
 
-    // function showPetMessage(Message) {
-    //  //hasnt been defined checkPetValues();
-    //   updatePetInfoInHtml();
-    //   //Display a comment after each action button is clicked.
-    // }
-    //   function showPetMessage(message) {
-    //   $(".pet-message").text(message);
-
-    //   $(".pet-message").attr("alt",showPetMessage,"Mochi is ready to start!");
-
-    //   //.fadeTo() briefly makes the pet image partly transparent,
-    //   // then fades it back to full opacity as visual response.
-    //   $(".pet-image").fadeTo(150,0.45).fadeTo(300,1);
+    function showPetMessage(Message) {
+      //hasnt been defined checkPetValues();
+      updatePetInfoInHtml();
+      $(".pet-message").text(message);
+      $(".pet-image").fadeTo(150,0.45).fadeTo(300,1)
       
-    //   }
+     }
