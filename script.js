@@ -50,7 +50,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       // Decrease pet weight
       pet_info.happiness -= 2;
       pet_info.weight -= 1;
-      checkAndUpdatePetInfoInHtml("Mochi feels stronger after exercise!");
+      //checkAndUpdatePetInfoInHtml("Mochi feels stronger after exercise!");
       //showPetMessage("I got some good excercise!");
     }
 
