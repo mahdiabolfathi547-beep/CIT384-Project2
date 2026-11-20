@@ -52,6 +52,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       pet_info.weight -= 1;
      // checkAndUpdatePetInfoInHtml("Mochi feels stronger after exercise!");
       //showPetMessage("I got some good excercise!");
+      console.log("Go to sleep");
     }
 
     //Rest is the new action. It increaes happiness without changing weight.
