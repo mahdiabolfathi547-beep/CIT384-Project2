@@ -60,6 +60,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       //checkAndUpdatePetInfoInHtml("Larry feels happier after resting!");
     }
 
+    //It increases the Information for happiness when it's given
     function checkAndUpdatePetInfoInHtml(message) {
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
