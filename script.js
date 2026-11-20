@@ -57,7 +57,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     //Rest is the new action. It increaes happiness without changing weight.
     function clickedRestButton() {
       pet_info.happiness += 1;
-      //showPetMessage("I got some good excercise");
+      checkAndUpdatePetInfoInHtml("Larry feels happier after resting!");
     }
 
     function checkAndUpdatePetInfoInHtml(message) {
@@ -77,7 +77,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.name').text(pet_info.name);
       $('.weight').text(pet_info.weight);
       $('.happiness').text(pet_info.happiness);
-
+      $('.rest-button').text(clickedRestButton);
       var happinessPercent = pet_info.happiness * 10;
       $(".meter-fill").css("width", happinessPercent + "%");
 
