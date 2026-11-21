@@ -19,7 +19,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.exercise-button').click(clickedExerciseButton);
     $('.rest-button').click(clickedRestButton);
 
-    $(".tips-button").on("click", function () {
+    $(".tip-button").on("click", function () {
       $(".care-tips").slideToggle(300);
     });
 })
