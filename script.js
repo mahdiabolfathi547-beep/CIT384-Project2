@@ -59,6 +59,7 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function clickedRestButton() {
       pet_info.happiness += 1;
       //checkAndUpdatePetInfoInHtml("Larry feels happier after resting!");
+      $('.happiness').text(pet_info.happiness);
     }
 
     //It increases the Information for happiness when it's given
